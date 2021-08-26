@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ColorfulMessage from "./components/ColorfulMessage";
 
 const App = () => {
-  console.log("さいしょ");
+  console.log("最初");
   const [num, setNum] = useState(0);
   const [faceShowFlag, setFaceShowFlag] = useState(false);
 
@@ -14,16 +14,14 @@ const App = () => {
   };
 
   useEffect(() => {
-    console.log("useEffect!!");
-  }, []);
-
-  if (num > 0) {
-    if (num % 3 === 0) {
-      faceShowFlag || setFaceShowFlag(true);
-    } else {
-      faceShowFlag && setFaceShowFlag(false);
+    if (num > 0) {
+      if (num % 3 === 0) {
+        faceShowFlag || setFaceShowFlag(true);
+      } else {
+        faceShowFlag && setFaceShowFlag(false);
+      }
     }
-  }
+  }, [num, faceShowFlag]);
 
   return (
     <>
